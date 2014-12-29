@@ -6,7 +6,7 @@
       $scope.logout = function(){
         User.logout().then(function(){
           $rootScope.rootuser = null;
-          $state.go('home');
+          $state.go('profile');
         });
       };
     }]);

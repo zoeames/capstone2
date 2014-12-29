@@ -18,7 +18,7 @@
           console.log('USERSCTRL', $scope.user);
           User.login($scope.user).then(function(response){
             $rootScope.rootuser = response.data;
-            $state.go('home');
+            $state.go('profile');
           }, function(){
             $scope.user = {};
           });

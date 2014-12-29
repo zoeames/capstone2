@@ -1,1 +1,18 @@
 h1 My Profile
+
+#myProfileInfo
+    .row
+        h3 Info
+    .rown
+        .small-4.columns
+            img#profileimg(ng-src='{{rootuser.avatar}}')
+        .small-8.colums
+            h4 {{rootuser.firstname}}
+            h4 {{rootuser.lastname}}
+            h4 {{rootuser.email}}
+            h4 {{rootuser.institutionid}}
+
+#smallbreak
+
+#mycourses
+    h3 My Courses

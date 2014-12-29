@@ -22,7 +22,7 @@ User.register = function(obj, cb){
   randomUrl(obj.avatar, function(file, avatar, token){
     user.avatar = avatar;
     user.token = token;
-    console.log('SERVER SIDE USER>>>>>>', user);
+    //console.log('SERVER SIDE USER>>>>>>', user);
     pg.query('insert into users (institutionid, password, avatar, token, firstname, lastname, email, isadmin) values ($1, $2, $3, $4, $5, $6, $7, $8) returning id', [user.institutionid, user.password, user.avatar, user.token, user.firstname, user.lastname, user.email, user.isadmin], function(err, results){
       if(err){return cb(true);}
       download(obj.avatar, file, cb);
@@ -31,6 +31,7 @@ User.register = function(obj, cb){
 };
 
 User.login = function(obj, cb){
+  console.log('SERVER SIDE institutionID>>>>>>', obj.institutionId);
   pg.query('select * from users where institutionId = $1 limit 1', [obj.institutionId], function(err, results){
     if(err || !results.rowCount){return cb();}
     var isAuth = bcrypt.compareSync(obj.password, results.rows[0].password);

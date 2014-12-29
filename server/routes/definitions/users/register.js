@@ -19,7 +19,7 @@ module.exports = {
   },
   auth: false,
   handler: function(request, reply){
-    console.log(request.payload);
+    //console.log(request.payload);
     User.register(request.payload, function(err){
       reply().code(err ? 400 : 200);
     });

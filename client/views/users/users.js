@@ -5,6 +5,7 @@
     .controller('UsersCtrl', ['$rootScope', '$scope', '$state', 'User', function($rootScope, $scope, $state, User){
       $scope.user = {};
       $scope.mode = $state.current.name;
+      $scope.user.avatar = 'http://carleton.ca/law/wp-content/uploads/default-profile2-160x160.jpg';
 
       $scope.submit = function(){
         if($scope.mode === 'register'){

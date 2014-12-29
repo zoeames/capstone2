@@ -21,7 +21,7 @@ describe('Users', function(){
         method: 'post',
         url: '/login',
         payload:{
-          username: 'bob',
+          institutionId: 'bob',
           password: '123'
         }
       };
@@ -39,7 +39,7 @@ describe('Users', function(){
         method: 'post',
         url: '/register',
         payload:{
-          username: 'sam',
+          institutionId: 'sam',
           password: '456',
           avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'
         }
@@ -58,13 +58,13 @@ describe('Users', function(){
         method: 'post',
         url: '/login',
         payload:{
-          username: 'bob',
+          institutionId: 'bob',
           password: '123'
         }
       };
 
       server.inject(options, function(response){
-        expect(response.result.username).to.equal('bob');
+        expect(response.result.institutionId).to.equal('bob');
         expect(response.statusCode).to.equal(200);
         done();
       });

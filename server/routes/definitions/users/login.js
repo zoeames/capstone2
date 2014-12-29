@@ -8,7 +8,7 @@ module.exports = {
   tags:['users'],
   validate: {
     payload: {
-      username: Joi.string().min(3).max(12).required(),
+      institutionId: Joi.string().min(3).max(12).required(),
       password: Joi.string().min(3).required()
     }
   },

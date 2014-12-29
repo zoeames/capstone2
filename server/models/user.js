@@ -8,7 +8,11 @@ var bcrypt  = require('bcrypt'),
     pg      = require('../postgres/manager');
 
 function User(obj){
-  this.username = obj.username;
+  this.institutionid = obj.institutionId;
+  this.firstname = obj.firstName;
+  this.lastname = obj.lastName;
+  this.email = obj.email;
+  this.isadmin = obj.isAdmin;
 }
 
 User.register = function(obj, cb){
@@ -18,7 +22,8 @@ User.register = function(obj, cb){
   randomUrl(obj.avatar, function(file, avatar, token){
     user.avatar = avatar;
     user.token = token;
-    pg.query('insert into users (username, password, avatar, token) values ($1, $2, $3, $4) returning id', [user.username, user.password, user.avatar, user.token], function(err, results){
+    console.log('SERVER SIDE USER>>>>>>', user);
+    pg.query('insert into users (institutionid, password, avatar, token, firstname, lastname, email, isadmin) values ($1, $2, $3, $4, $5, $6, $7, $8) returning id', [user.institutionid, user.password, user.avatar, user.token, user.firstname, user.lastname, user.email, user.isadmin], function(err, results){
       if(err){return cb(true);}
       download(obj.avatar, file, cb);
     });
@@ -26,7 +31,7 @@ User.register = function(obj, cb){
 };
 
 User.login = function(obj, cb){
-  pg.query('select * from users where username = $1 limit 1', [obj.username], function(err, results){
+  pg.query('select * from users where institutionId = $1 limit 1', [obj.institutionId], function(err, results){
     if(err || !results.rowCount){return cb();}
     var isAuth = bcrypt.compareSync(obj.password, results.rows[0].password);
     if(!isAuth){return cb();}

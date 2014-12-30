@@ -1,11 +1,11 @@
 'use strict';
 
 var bcrypt  = require('bcrypt'),
-    request = require('request'),
-    path    = require('path'),
-    AWS     = require('aws-sdk'),
-    crypto  = require('crypto'),
-    pg      = require('../postgres/manager');
+  request = require('request'),
+  path    = require('path'),
+  AWS     = require('aws-sdk'),
+  crypto  = require('crypto'),
+  pg      = require('../postgres/manager');
 
 function User(obj){
   this.institutionid = obj.institutionId;
@@ -47,8 +47,8 @@ function randomUrl(url, cb){
 
   crypto.randomBytes(48, function(ex, buf){
     var token  = buf.toString('hex'),
-        file   = token + '/avatar' + ext,
-        avatar = 'https://s3.amazonaws.com/' + process.env.AWS_BUCKET + '/' + file;
+      file   = token + '/avatar' + ext,
+      avatar = 'https://s3.amazonaws.com/' + process.env.AWS_BUCKET + '/' + file;
     cb(file, avatar, token);
   });
 }

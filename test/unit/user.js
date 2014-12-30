@@ -22,23 +22,23 @@ describe('User', function(){
 
   describe('constructor', function(){
     it('should create a User object', function(done){
-      var user = new User({institutionId:'bob'});
+      var user = new User({institutionId:'9999999999'});
 
       expect(user).to.be.instanceof(User);
-      expect(user.institutionId).to.equal('bob');
+      expect(user.institutionid).to.equal('9999999999');
       done();
     });
   });
 
   describe('.register', function(){
     it('should register a new User', function(done){
-      User.register({institutionId:'sam', password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'}, function(err){
+      User.register({institutionId:'3333333333', password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png', firstName:'sam', lastName:'jones', email:'sam@aol.com', isAdmin:'false'}, function(err){
         expect(err).to.be.null;
         done();
       });
     });
     it('should NOT register a new User - duplicate', function(done){
-      User.register({institutionId:'bob', password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'}, function(err){
+      User.register({institutionId:'9999999999', password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'}, function(err){
         expect(err).to.be.ok;
         done();
       });
@@ -47,19 +47,19 @@ describe('User', function(){
 
   describe('.login', function(){
     it('should login a User', function(done){
-      User.login({institutionId:'bob', password:'123'}, function(user){
-        expect(user.institutionId).to.equal('bob');
+      User.login({institutionId:'9999999999', password:'123'}, function(user){
+        expect(user.institutionid).to.equal('9999999999');
         done();
       });
     });
-    it('should NOT login a User - bad institutionId', function(done){
-      User.login({institutionId:'wrong', password:'123'}, function(user){
+    it('should NOT login a User - bad institutionid', function(done){
+      User.login({institutionId:'5555555555', password:'123'}, function(user){
         expect(user).to.be.undefined;
         done();
       });
     });
     it('should NOT login a User - bad password', function(done){
-      User.login({institutionId:'bob', password:'wrong'}, function(user){
+      User.login({institutionId:'9999999999', password:'wrong'}, function(user){
         expect(user).to.be.undefined;
         done();
       });

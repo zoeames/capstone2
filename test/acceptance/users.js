@@ -21,7 +21,7 @@ describe('Users', function(){
         method: 'post',
         url: '/login',
         payload:{
-          institutionId: 'bob',
+          institutionId: '9999999999',
           password: '123'
         }
       };
@@ -39,10 +39,14 @@ describe('Users', function(){
         method: 'post',
         url: '/register',
         payload:{
-          institutionId: 'sam',
+          institutionId: '1111111111',
           password: '456',
-          avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'
-        }
+          firstName:'Sam',
+          lastName:'Jones',
+          isAdmin:'false',
+          email:'sam@aol.com',
+          avatar: 'http://carleton.ca/law/wp-content/uploads/default-profile2-160x160.jpg'
+    }
       };
 
       server.inject(options, function(response){
@@ -58,13 +62,13 @@ describe('Users', function(){
         method: 'post',
         url: '/login',
         payload:{
-          institutionId: 'bob',
+          institutionId: '9999999999',
           password: '123'
         }
       };
 
       server.inject(options, function(response){
-        expect(response.result.institutionId).to.equal('bob');
+        expect(response.result.institutionid).to.equal('9999999999');
         expect(response.statusCode).to.equal(200);
         done();
       });

@@ -3,14 +3,15 @@ h1 My Profile
 #myProfileInfo
     .row
         h3 Info
-    .rown
+    .row
         .small-4.columns
             img#profileimg(ng-src='{{rootuser.avatar}}')
-        .small-8.colums
-            h4 {{rootuser.firstname}}
-            h4 {{rootuser.lastname}}
+        .small-4.columns
+            h4 {{rootuser.firstname}} {{rootuser.lastname}}
             h4 {{rootuser.email}}
-            h4 {{rootuser.institutionid}}
+        .small-4.columns
+            h4 ID: {{rootuser.institutionid}}
+            h4 Status: {{institutionStatus}}
 
 #smallbreak
 

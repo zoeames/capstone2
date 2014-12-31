@@ -20,6 +20,6 @@ env:
     - DATABASE_URL=postgres://postgres@localhost/capstone2_test
     - AWS_BUCKET=zoe-capstone2-test
     # AWS_SECRET_ACCESS_KEY
-    - secure: "RaUrUsyrB7JTZbeyTNRrWAXpbxh5pOL3VRP817Rk+cLIS/tughum78TW8PCTeF5vHXFZ+oVMzFGBShnOKZPzL8Symqkvcyehr5Vg17hlplegzuqS6LsJo2Y1FCVHqdi2OGekGZ9ABdPu1s1KCThURQjXcAKGELi0RpYJEiq/S4w="
-    # AWS_ACCESS_KEY_ID
     - secure: "W7B4B/8tHy9NTY+qFYIAoZt026OyvQqACmvnxEatNAyEBM7HNpB5VYQl7ZBhrKv7NrAZTiv/NPVZVdpbbCH17x0o/8GLke3ofyxtFmgRIzI3JTPlm72qTt0wd9jOL1u0ejZ2HaiwD3DyAjbaV9eif/19WBZFD1N6bTwNj+VeSAc="
+    # AWS_ACCESS_KEY_ID
+    - secure: "RaUrUsyrB7JTZbeyTNRrWAXpbxh5pOL3VRP817Rk+cLIS/tughum78TW8PCTeF5vHXFZ+oVMzFGBShnOKZPzL8Symqkvcyehr5Vg17hlplegzuqS6LsJo2Y1FCVHqdi2OGekGZ9ABdPu1s1KCThURQjXcAKGELi0RpYJEiq/S4w="

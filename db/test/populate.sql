@@ -1,7 +1,6 @@
 insert into users (institutionid, password, avatar, token, firstname, lastname, email, isadmin)  values ('1111', 'b', 'c', 'd', 'e', 'f', 'g', 'false');
 insert into users (institutionid, password, avatar, token, firstname, lastname, email, isadmin)  values ('1111', 'b', 'c', 'd', 'e', 'f', 'g', 'true');
 insert into users (institutionid, password, avatar, token, firstname, lastname, email, isadmin)  values ('1111', 'b', 'c', 'd', 'e', 'f', 'g', 'false');
-insert into users (institutionId,password,avatar,token) values ('a3', 'b', 'c', 'd');
 
 delete from users;
 

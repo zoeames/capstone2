@@ -21,6 +21,7 @@ module.exports = {
   handler: function(request, reply){
     console.log('request.payload REGISTER:', request.payload);
     User.register(request.payload, function(err){
+      console.log('THIS IS THE ERROR in register:', err);
       reply().code(err ? 400 : 200);
     });
   }

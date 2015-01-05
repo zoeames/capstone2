@@ -8,14 +8,11 @@ module.exports = {
   tags:['notes'],
   validate: {
     payload: {
-      courseTitle: Joi.string().required(),
-      institutionId: Joi.string().required(),
-      topic: Joi.string().required(),
-      webpage: Joi.string().required()
+      courseId: Joi.string().required()
     }
   },
   handler: function(request, reply){
-    Course.create(request.auth.credentials, request.payload, function(err, course){
+    Course.add(request.auth.credentials, request.payload, function(err, course){
       reply();
     });
   }

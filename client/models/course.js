@@ -8,6 +8,9 @@
         return $http.post('/newcourse', course);
       }
 
-      return {create:create};
+      function add(courseId){
+        return $http.post('/addcourse', courseId);
+      }
+      return {create:create, add:add};
     }]);
 })();

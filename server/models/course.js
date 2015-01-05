@@ -12,4 +12,10 @@ Course.create = function(user, obj, cb){
   });
 };
 
+Course.add = function(user, obj, cb){
+  pg.query('insert into mycourses (userid, courseid) values ($1, $2)', [user.id, obj.courseId], function(err, results){
+    console.log(err, results);
+    cb();
+  });
+};
 module.exports = Course;

@@ -1,1 +1,26 @@
 h2 new course
+
+.row
+  .large-12.columns
+    form
+      .courseForm
+        .row
+          .large-12.columns
+            label(for='courseTitle') Course Title
+            input#courseTitle(type='text', name='courseTitle', ng-model='course.courseTitle', autofocus)
+        .row
+          .small-12.columns
+            label(for='institutionId') Institution Course ID
+            input#institutionId(type='text', name='institutionId', ng-model='course.institutionId')
+        .row
+          .small-12.columns
+            label(for='webpage') Webpage URL
+            input#webpage(type='text', name='webpage', ng-model='course.webpage')
+        .row
+          .small-12.columns
+            label(for='topic') Course Topic
+            select(name='topic', ng-model='course.topic', ng-options='t.name as t.name for t in topics', required)
+              option(value='') Course Topic
+        .row
+          .small-12.columns
+            button(ng-click='submit()') Create Course

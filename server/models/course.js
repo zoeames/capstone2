@@ -6,9 +6,9 @@ function Course(){
 }
 
 Course.create = function(user, obj, cb){
-  pg.query('insert into courses (instructorid, coursetitle, institutionid, webpage, topic) values ($1, $2, $3, $4, $5)', [user.id, obj.courseTitle, obj.institutionId, obj.webpage, obj.topic], function(err, results){
-    console.log(err, results);
-    cb();
+  pg.query('select add_course($1, $2, $3, $4, $5)', [user.id, obj.courseTitle, obj.institutionId, obj.webpage, obj.topic], function(err, results){
+    //console.log('SERVER results add Note:', err, results);
+    cb(err, results && results.rows ? results.rows[0].add_course : null);
   });
 };
 

@@ -17,7 +17,14 @@
       $scope.create = function(course){
         Course.create(course).then(function(response){
           console.log('client course.js >>>> ', response.data);
-          $scope.note={};
+          var c =''+response.data.courseId,
+              addNewCourse ={courseId : c};
+          console.log(addNewCourse);
+          $scope.course={};
+          Course.add(addNewCourse).then(function(response){
+          }, function(){
+            console.log('error');
+          });
         }, function(){
           console.log('error');
         });

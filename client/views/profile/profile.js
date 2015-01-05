@@ -14,7 +14,7 @@
       $scope.addCourse = function(addNewCourse){
         Course.add(addNewCourse).then(function(response){
           console.log('client ADDcourse >>>> ', response.data);
-          $scope.note={};
+          $scope.addNewCourse={};
         }, function(){
           console.log('error');
         });

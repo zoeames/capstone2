@@ -15,8 +15,9 @@ module.exports = {
     }
   },
   handler: function(request, reply){
-    Course.create(request.auth.credentials, request.payload, function(err, course){
-      reply();
+    Course.create(request.auth.credentials, request.payload, function(err, courseId){
+      console.log('THIS IS THE courseid <<<<<<<<<< ', courseId);
+      reply({courseId:courseId}).code(err ? 400 : 200);
     });
   }
 };

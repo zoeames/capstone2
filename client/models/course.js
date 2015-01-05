@@ -9,6 +9,7 @@
       }
 
       function add(courseId){
+        console.log('hit add factory', courseId);
         return $http.post('/addcourse', courseId);
       }
       return {create:create, add:add};

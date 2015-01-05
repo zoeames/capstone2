@@ -19,5 +19,12 @@
           console.log('error');
         });
       };
+
+      Course.query().then(function(response){
+        console.log('client findCourses >>>> ', response.data);
+        debugger;
+        $scope.myCourses = response.data;
+      });
+
     }]);
 })();

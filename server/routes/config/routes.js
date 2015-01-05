@@ -7,6 +7,6 @@ module.exports = [
   {method: 'delete', path: '/logout',                       config: require('../definitions/users/logout')},
   {method: 'get',    path: '/status',                       config: require('../definitions/users/status')},
   {method: 'post',   path: '/newcourse',                    config: require('../definitions/courses/create')},
-  {method: 'post',   path:'/addcourse',                     config: require('../definitions/courses/add')}
-  //{method: 'get',    path: '/courses',                      config: require('../definitions/courses/query')}
+  {method: 'post',   path:'/addcourse',                     config: require('../definitions/courses/add')},
+  {method: 'get',    path: '/findcourses',                  config: require('../definitions/courses/query')}
 ];

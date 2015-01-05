@@ -14,8 +14,15 @@ Course.create = function(user, obj, cb){
 
 Course.add = function(user, obj, cb){
   pg.query('insert into mycourses (userid, courseid) values ($1, $2)', [user.id, obj.courseId], function(err, results){
-    console.log(err, results);
+    //console.log(err, results);
     cb();
+  });
+};
+
+Course.query = function(user, cb){
+  pg.query('select find_courses($1)', [user.id], function(err, results){
+    console.log('SERVER results find_courses:', results);
+    cb(err, results && results.rows ? results.rows : null);
   });
 };
 module.exports = Course;

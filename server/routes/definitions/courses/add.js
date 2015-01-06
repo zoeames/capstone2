@@ -16,7 +16,7 @@ module.exports = {
     //console.log('add.js credentials  >>>>', request.auth.credentials);
     //console.log('add.js payload  >>>>', request.payload);
     Course.add(request.auth.credentials, request.payload, function(err, courseId){
-      reply({courseId:courseId});
+      reply({courseId:courseId}).code(err ? 400 : 200);
     });
   }
 };

@@ -21,7 +21,7 @@ Course.add = function(user, obj, cb){
 
 Course.query = function(user, cb){
   pg.query('select find_courses($1)', [user.id], function(err, results){
-    console.log('SERVER results find_courses:', results);
+    console.log('SERVER results find_courses:', results.rows);
     cb(err, results && results.rows ? results.rows : null);
   });
 };

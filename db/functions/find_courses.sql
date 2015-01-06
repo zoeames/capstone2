@@ -1,11 +1,10 @@
 create or replace function find_courses (uid integer)
-returns table (course_id integer, coursetitle varchar, instructorfirstname varchar, instructorlastname varchar) AS $$
+returns table ("courseId" integer, "courseTitle" varchar, "instructorFirstName" varchar, "instructorLastName" varchar) AS $$
 declare
 begin
 
   return query
-
-    select c.id, c.coursetitle, u.firstname, u.lastname
+    select c.id as "couseId", c.coursetitle as "courseTitle", u.firstname as "instructorFirstName", u.lastname as "instructorLastName"
     from mycourses mc
     inner join courses c on c.id = mc.courseid
     inner join users u on u.id=c.instructorid

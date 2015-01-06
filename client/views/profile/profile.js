@@ -22,8 +22,8 @@
 
       Course.query().then(function(response){
         console.log('client findCourses >>>> ', response.data);
+        $scope.myCourses = response.data.mycourses;
         debugger;
-        $scope.myCourses = response.data;
       });
 
     }]);

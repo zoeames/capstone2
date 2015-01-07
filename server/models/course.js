@@ -20,8 +20,8 @@ Course.add = function(user, obj, cb){
 };
 
 Course.query = function(user, cb){
-  pg.query('select find_courses($1)', [user.id], function(err, results){
-    console.log('SERVER results find_courses:', results.rows);
+  pg.query('select * from find_courses($1)', [user.id], function(err, results){
+    console.log('SERVER results query', results.rows);
     cb(err, results && results.rows ? results.rows : null);
   });
 };

@@ -31,6 +31,7 @@
       };
       $scope.createLesson = function(){
         $state.go('newlesson');
+        //$state.go('newlesson', {courseId:courseId});
       };
     }]);
 })();

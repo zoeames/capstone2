@@ -17,14 +17,31 @@ h1 My Profile
 
 #mycourses
     h3 My Courses
-    button.button.success(ng-click='addcourse=true') Add a New Course
-    .addcourse(ng-show='addcourse')
-        form
-            .addCourseForm
-                .row
-                    .large-6.columns
-                        label(for='courseId') Course Id
-                        input#courseId(type='text', name='courseId', ng-model='addNewCourse.courseId', autofocus)
-                    .large-6.columns
-                        button.button.success(ng-click='addCourse(addNewCourse)') Add
-                        button.button.success(ng-click='addcourse=false') Done
+    .row
+        .small-12.columns
+          button.button.success(ng-click='addcourse=true') Add a New Course
+          .addcourse(ng-show='addcourse')
+              form
+                  .addCourseForm
+                      .row
+                          .large-6.columns
+                              label(for='courseId') Course Id
+                              input#courseId(type='text', name='courseId', ng-model='addNewCourse.courseId', autofocus)
+                          .large-6.columns
+                              button.button.success(ng-click='addCourse(addNewCourse)') Add
+                              button.button.success(ng-click='addcourse=false') Done
+          .row
+              table.coursesTable
+                thead
+                    tr
+                        th Delete
+                        th Title
+                        th Instructor
+                tbody
+                    tr(ng-repeat='c in courses')
+                        td
+                            a(ng-click='nuke(course)')
+                                img(ng-src='/assets/delete.png')
+                        td: a.button.button.success(ui-sref='course({courseId:c.courseId})') {{c.courseTitle}}
+                        td {{c.instructorFirstName}} {{c.instructorLastName}}
+#smallbreak

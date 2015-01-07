@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('hapi-auth')
-    .controller('CoursesCtrl', ['$rootScope', '$scope', 'Course', function($rootScope, $scope, Course){
+    .controller('CoursesCtrl', ['$rootScope', '$scope', 'Course', '$state', function($rootScope, $scope, Course, $state){
       $scope.course = {};
       $scope.topics = [
         {name:'Astronomy'},
@@ -28,6 +28,9 @@
         }, function(){
           console.log('error');
         });
+      };
+      $scope.createLesson = function(){
+        $state.go('newlesson');
       };
     }]);
 })();

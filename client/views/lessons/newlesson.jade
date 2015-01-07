@@ -1,0 +1,36 @@
+h2 new lesson
+
+.row
+  .large-12.columns
+    form
+      .courseForm
+        .row
+          .large-12.columns
+            label(for='lessonTitle') Lesson Title
+            input#lessonTitle(type='text', name='lessonTitle', ng-model='lesson.lessonTitle', autofocus)
+        .row
+          .small-12.columns
+            label(for='lessonDate') Lesson Date
+            input#lessonDate(type='date', name='lessonDate', ng-model='lesson.lessonDate')
+        .row
+          .small-12.columns
+            label(for='lessonSummary') Lesson Summary
+            input#lessonSummary(type='text', name='lessonSummary', ng-model='lesson.lessonSummary')
+        .row
+          .small-12.columns
+            label(for='lessonFiles') Upload Lesson File(s)
+            button.small.radius(ng-file-select, ng-model="files", multiple="true") Add Files
+            h5 uploading
+            table.uploadingTable
+              thead
+                tr
+                  th Files
+                  th Uploaded
+              tbody
+                tr
+                  td {{files.length}}
+                  td {{count}}
+        .row
+          .small-12.columns
+            button.button.success(ng-click='create(lesson)') Create Course
+

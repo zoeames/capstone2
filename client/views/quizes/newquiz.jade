@@ -1,1 +1,46 @@
-h2 new quiz
+h2 New Quiz
+.row
+  .large-12.columns
+    form
+      .courseForm
+        .row
+          .large-12.columns
+            label(for='quizQuestion') Question:
+            input#quizQuestion(type='text', name='quizQuestion', ng-model='quiz. quizQuestion', autofocus)
+        .row
+          .small-12.columns
+            label(for='lessonFiles') Upload image:
+            button.small.radius(ng-file-select, ng-model="files", multiple="true") Add Files
+            h5 uploading
+            table.uploadingTable
+              thead
+                tr
+                  th Files
+                  th Uploaded
+              tbody
+                tr
+                  td {{files.length}}
+                  td {{count}}
+        .row
+          .small-12.columns
+            label(for='answerA') AnswerA:
+            input#quizAnswer(type='text', name='answerA', ng-model='quiz.answerA')
+        .row
+          .small-12.columns
+            label(for='answerB') AnswerB:
+            input#quizAnswer(type='text', name='answerB', ng-model='quiz.answerB')
+        .row
+          .small-12.columns
+            label(for='answerC') AnswerC:
+            input#quizAnswer(type='text', name='answerC', ng-model='quiz.answerC')
+        .row
+          .small-12.columns
+            label(for='answerD') AnswerD:
+            input#quizAnswer(type='text', name='answerD', ng-model='quiz.answerD')
+        .row
+          .small-12.columns
+            label(for='answerE') AnswerE:
+            input#quizAnswer(type='text', name='answerE', ng-model='quiz.answerE')
+        .row
+          .small-12.columns
+            button.button.success(ng-click='create(quiz)') Create Quiz

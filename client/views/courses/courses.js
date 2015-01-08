@@ -33,5 +33,7 @@
         $state.go('newlesson');
         //$state.go('newlesson', {courseId:courseId});
       };
+
+      console.log('THIS IS THE STATE PARAMS', $state.params);
     }]);
 })();

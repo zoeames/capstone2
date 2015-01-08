@@ -25,4 +25,14 @@ Course.query = function(user, cb){
     cb(err, results && results.rows ? results.rows : null);
   });
 };
+
+Course.show = function(courseId, cb){
+  pg.query('select * from show_course($1)', [courseId], function(err, results){
+    console.log('server side model model SHOW', results);
+    cb(err, results && results.rows ? results.rows[0] : null);
+  });
+};
+
+
+
 module.exports = Course;

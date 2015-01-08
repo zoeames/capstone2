@@ -8,5 +8,7 @@ module.exports = [
   {method: 'get',    path: '/status',                       config: require('../definitions/users/status')},
   {method: 'post',   path: '/newcourse',                    config: require('../definitions/courses/create')},
   {method: 'post',   path:'/addcourse',                     config: require('../definitions/courses/add')},
-  {method: 'get',    path: '/findcourses',                  config: require('../definitions/courses/query')}
+  {method: 'get',    path: '/findcourses',                  config: require('../definitions/courses/query')},
+  {method: 'get',    path: '/courses/{courseId}',           config: require('../definitions/courses/show')}
+
 ];

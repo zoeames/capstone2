@@ -4,8 +4,8 @@ var Joi  = require('joi'),
   Course = require('../../../models/course');
 
 module.exports = {
-  description: 'Create a Note',
-  tags:['notes'],
+  description: 'Create a new course',
+  tags:['courses'],
   validate: {
     payload: {
       courseTitle: Joi.string().required(),

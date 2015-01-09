@@ -3,8 +3,8 @@
 var Course = require('../../../models/course');
 
 module.exports = {
-  description: 'Create a Note',
-  tags:['notes'],
+  description: 'Finds all courses a user is enrolled in',
+  tags:['courses'],
   handler: function(request, reply){
     //console.log('hit add function from ROUTER');
     //console.log('add.js credentials  >>>>', request.auth.credentials);

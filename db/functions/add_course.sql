@@ -6,7 +6,7 @@ declare
 
 begin
 
-  -- insert the note
+  -- insert the course
   insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values (userid, courseTitle, institutionId, semester, webpage, topic) returning id into cid;
 
   -- return the course id

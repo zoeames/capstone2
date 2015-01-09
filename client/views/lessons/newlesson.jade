@@ -18,19 +18,5 @@ h2 new lesson
             input#lessonSummary(type='text', name='lessonSummary', ng-model='lesson.lessonSummary')
         .row
           .small-12.columns
-            label(for='lessonFiles') Upload Lesson File(s)
-            button.small.radius(ng-file-select, ng-model="files", multiple="true") Add Files
-            h5 uploading
-            table.uploadingTable
-              thead
-                tr
-                  th Files
-                  th Uploaded
-              tbody
-                tr
-                  td {{files.length}}
-                  td {{count}}
-        .row
-          .small-12.columns
-            button.button.success(ng-click='create(lesson)') Create Course
+            button.button.success(ng-click='create(lesson)') Create Lesson
 

@@ -36,6 +36,7 @@ h1 My Profile
                     tr
                         th Delete
                         th Title
+                        th Semester
                         th Instructor
                 tbody
                     tr(ng-repeat='c in courses')
@@ -43,5 +44,6 @@ h1 My Profile
                             a(ng-click='nuke(course)')
                                 img(ng-src='/assets/delete.png')
                         td: a.button.button.success(ui-sref='course({courseId:c.courseId})') {{c.courseTitle}}
+                        td {{c.semester}}
                         td {{c.instructorFirstName}} {{c.instructorLastName}}
 #smallbreak

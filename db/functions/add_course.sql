@@ -1,4 +1,4 @@
-create or replace function add_course (userid integer, courseTitle varchar, institutionId varchar, webpage varchar, topic varchar)
+create or replace function add_course (userid integer, courseTitle varchar, institutionId varchar, semester varchar, webpage varchar, topic varchar)
 returns integer AS $$
 declare
 
@@ -7,7 +7,7 @@ declare
 begin
 
   -- insert the note
-  insert into courses (instructorid, coursetitle, institutionid, webpage, topic) values (userid, courseTitle, institutionId, webpage, topic) returning id into cid;
+  insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values (userid, courseTitle, institutionId, semester, webpage, topic) returning id into cid;
 
   -- return the course id
   return cid;

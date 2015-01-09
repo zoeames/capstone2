@@ -10,6 +10,7 @@ module.exports = {
     payload: {
       courseTitle: Joi.string().required(),
       institutionId: Joi.string().required(),
+      semester: Joi.string().required(),
       topic: Joi.string().required(),
       webpage: Joi.string().required()
     }

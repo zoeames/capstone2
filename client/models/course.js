@@ -5,6 +5,7 @@
     .factory('Course', ['$http', function($http){
 
       function create(course){
+        console.log('hit add factory', course);
         return $http.post('/newcourse', course);
       }
 

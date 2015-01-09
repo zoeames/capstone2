@@ -16,16 +16,19 @@
         {name:'Other'}];
       $scope.create = function(course){
         Course.create(course).then(function(response){
+          toastr.success('Course successfully added.');
           console.log('client course.js >>>> ', response.data);
           var c =''+response.data.courseId,
               addNewCourse ={courseId : c};
           console.log(addNewCourse);
           $scope.course={};
           Course.add(addNewCourse).then(function(response){
+            $state.go('profile');
           }, function(){
             console.log('error');
           });
         }, function(){
+          toastr.error('Error creating course, try again.');
           console.log('error');
         });
       };

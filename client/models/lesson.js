@@ -13,15 +13,16 @@
         //console.log('hit add factory', courseId);
         return $http.post('/addcourse', courseId);
       }
-      function query(){
+*/
+      function query(courseId){
         console.log('hit add factory');
-        return $http.get('/findcourses');
+        return $http.get('/findlessons/' + courseId);
       }
-
+/*
       function show(courseId){
         return $http.get('/courses/' + courseId);
       }
       */
-      return {create:create};
+      return {create:create, query:query};
     }]);
 })();

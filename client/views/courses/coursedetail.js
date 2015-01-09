@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('hapi-auth')
-    .controller('CourseDetailCtrl', ['$rootScope', '$scope', 'Course', '$state', function($rootScope, $scope, Course, $state){
+    .controller('CourseDetailCtrl', ['$rootScope', '$scope', 'Course', '$state', 'Lesson', function($rootScope, $scope, Course, $state, Lesson){
       $scope.course = {};
 
       $('.nav-toggle').click(function(){
@@ -22,9 +22,16 @@
         console.log(response.data);
         $scope.course = response.data;
       });
+
       $scope.createLesson = function(){
         //$state.go('newlesson');
         $state.go('newlesson', {courseId:$scope.course.courseId});
       };
+
+      Lesson.query($state.params.courseId).then(function(response){
+        console.log('client findLessons >>>> ', response.data);
+        $scope.lessons = response.data.lessons;
+        //debugger;
+      });
     }]);
 })();

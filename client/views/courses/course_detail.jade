@@ -31,5 +31,23 @@ h2 {{course.courseTitle}}
 
 #smallbreak
 #mycourses
-  h3 Lessons:
-  button.button.success(ng-click='createLesson()') Create a New Lesson
+  .row
+    h3 Lessons:
+    button.button.success(ng-click='createLesson()') Create a New Lesson
+  .row
+    table.lessonsTable
+      thead
+        tr
+          th Delete
+          th Title
+          th Date
+          th Summary
+      tbody
+        tr(ng-repeat='l in lessons')
+          td
+            a(ng-click='nuke(lesson)')
+              img(ng-src='/assets/delete.png')
+          td: a.button.button.success(ui-sref='course({courseId:c.courseId})') {{l.lessonTitle}}
+          td {{l.lessonDate}}
+          td {{l.lessonSummary}}
+  #smallbreak

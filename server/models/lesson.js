@@ -13,6 +13,11 @@ Lesson.create = function(obj, cb){
   });
 };
 
-
+Lesson.query = function(courseid, cb){
+  console.log('lesson server model courseID', courseid);
+  pg.query('select * from find_lessons($1)', [courseid], function(err, results){
+    cb(err, results && results.rows ? results.rows : null);
+  });
+};
 
 module.exports = Lesson;

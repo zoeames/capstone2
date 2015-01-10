@@ -6,10 +6,10 @@ h2 New Quiz
         .row
           .large-12.columns
             label(for='quizQuestion') Question:
-            input#quizQuestion(type='text', name='quizQuestion', ng-model='quiz. quizQuestion', autofocus)
+            input#quizQuestion(type='text', name='quizQuestion', ng-model='quiz.quizQuestion', autofocus)
         .row
           .small-12.columns
-            label(for='lessonFiles') Upload image:
+            label(for='lessonFiles') Upload image (optional < 4 MB):
             button.small.radius(ng-file-select, ng-model="files", multiple="true") Add Files
             h5 uploading
             table.uploadingTable
@@ -23,24 +23,37 @@ h2 New Quiz
                   td {{count}}
         .row
           .small-12.columns
-            label(for='answerA') AnswerA:
+            label(for='answerA') Answer A:
             input#quizAnswer(type='text', name='answerA', ng-model='quiz.answerA')
         .row
           .small-12.columns
-            label(for='answerB') AnswerB:
+            label(for='answerB') Answer B:
             input#quizAnswer(type='text', name='answerB', ng-model='quiz.answerB')
         .row
           .small-12.columns
-            label(for='answerC') AnswerC:
+            label(for='answerC') Answer C:
             input#quizAnswer(type='text', name='answerC', ng-model='quiz.answerC')
         .row
           .small-12.columns
-            label(for='answerD') AnswerD:
+            label(for='answerD') Answer D:
             input#quizAnswer(type='text', name='answerD', ng-model='quiz.answerD')
         .row
           .small-12.columns
-            label(for='answerE') AnswerE:
+            label(for='answerE') Answer E:
             input#quizAnswer(type='text', name='answerE', ng-model='quiz.answerE')
+        .row
+          .small-12.columns
+            label Correct Answer:
+            input#correctAnswerA(type='radio', name='correctAnswerA', ng-model='quiz.correctAnswer', value='answerA')
+            label(for='correctAnswerA') Answer A
+            input#correctAnswerB(type='radio', name='correctAnswerB', ng-model='quiz.correctAnswer', value='answerB')
+            label(for='correctAnswerB') Answer B
+            input#correctAnswerC(type='radio', name='correctAnswerC', ng-model='quiz.correctAnswer', value='answerC')
+            label(for='correctAnswerC') Answer C
+            input#correctAnswerD(type='radio', name='correctAnswerD', ng-model='quiz.correctAnswer', value='answerD')
+            label(for='correctAnswerD') Answer D
+            input#correctAnswerE(type='radio', name='correctAnswerE', ng-model='quiz.correctAnswer', value='answerE')
+            label(for='correctAnswerE') Answer E
         .row
           .small-12.columns
             button.button.success(ng-click='create(quiz)') Create Quiz

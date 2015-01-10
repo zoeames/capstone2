@@ -27,7 +27,7 @@ h2 Lesson: {{lesson.lessonTitle}}
           td
             a(ng-click='nuke(lesson)')
               img(ng-src='/assets/delete.png')
-          td: a.button.button.success(ui-sref='lesson({courseId:course.courseId, lessonId:l.lessonId})') {{l.lessonTitle}}
+          td: a.button.button.success(ui-sref='newquiz({courseId:course.courseId, lessonId:l.lessonId})') {{l.lessonTitle}}
           td {{l.lessonDate}}
           td {{l.lessonSummary}}
   #smallbreak

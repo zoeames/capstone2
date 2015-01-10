@@ -15,7 +15,7 @@
         .state('grades',       {url:'/courses/{courseId}/grades',                              templateUrl:'/views/courses/grades.html',         controller:'CoursesCtrl'})
         .state('lesson',       {url:'/courses/{courseId}/lessons/{lessonId}',                  templateUrl:'/views/lessons/lesson_detail.html',  controller:'LessonDetailCtrl'})
         .state('newquiz',      {url:'/courses/{courseId}/lessons/{lessonId}/newquiz',          templateUrl:'/views/quizes/newquiz.html',        controller:'QuizCtrl'})
-        .state('quiz',         {url:'/courses/{courseId}/lessons/{lessonId}/quizes/{quizId}',  templateUrl:'/views/quizes/quiz_detail.html',    controller:'QuizCtrl'});
+        .state('quiz',         {url:'/courses/{courseId}/lessons/{lessonId}/quizes/{quizId}',  templateUrl:'/views/quizes/quiz_detail.html',    controller:'QuizDetailCtrl'});
 
 
       }])

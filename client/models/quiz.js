@@ -16,6 +16,10 @@
         return $http.get('/findquizzes/' + lessonId);
       }
 
+      function show(quizId){
+        return $http.get('/quizzes/' + quizId);
+      }
+
       function upload(quizId, files){
         var count = 0;
         for (var i = 0; i < files.length; i++){
@@ -33,6 +37,6 @@
         }
       }
 
-      return {create:create, query:query, upload:upload};
+      return {create:create, query:query, show:show, upload:upload};
     }]);
 })();

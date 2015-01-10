@@ -25,6 +25,13 @@ Quiz.query = function(lessonid, cb){
 };
 
 
+Quiz.show = function(quizId, cb){
+  pg.query('select * from show_quiz($1)', [quizId], function(err, results){
+    console.log('server side model quiz SHOW', results);
+    cb(err, results && results.rows ? results.rows[0] : null);
+  });
+};
+
 
 Quiz.upload = function(user, file, name, quizId, cb){
   var s3   = new AWS.S3();

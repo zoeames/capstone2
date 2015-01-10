@@ -20,6 +20,5 @@
         $scope.quizzes = response.data.quizzes;
         //debugger;
       });
-
     }]);
 })();

@@ -15,5 +15,6 @@ module.exports = [
   {method: 'get',    path: '/lessons/{lessonId}',           config: require('../definitions/lessons/show')},
   {method: 'post',   path:'/newquiz',                       config: require('../definitions/quizzes/create')},
   {method: 'post',   path:'/quizzes/{quizId}/upload',       config: require('../definitions/quizzes/upload')},
-  {method: 'get',    path: '/findquizzes/{lessonId}',       config: require('../definitions/quizzes/query')}
+  {method: 'get',    path: '/findquizzes/{lessonId}',       config: require('../definitions/quizzes/query')},
+  {method: 'get',    path: '/quizzes/{quizId}',             config: require('../definitions/quizzes/show')}
 ];

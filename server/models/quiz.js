@@ -10,8 +10,9 @@ function Quiz(){
 }
 
 Quiz.create = function(obj, cb){
-  console.log('hit the server model');
-  pg.query('select add_quiz ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [obj.lessonId, obj.quizQuestion, obj.answerA, obj.answerB, obj.answerC, obj.answerD, obj.answerE, obj.correctAnswer, obj.isActive, obj.isCompleted], function(err, results){
+  console.log('hit the server model', obj);
+  pg.query('select add_quiz ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)', [obj.lessonId, obj.quizTitle, obj.quizQuestion, obj.answerA, obj.answerB, obj.answerC, obj.answerD, obj.answerE, obj.correctAnswer, obj.isActive, obj.isCompleted], function(err, results){
+    console.log(err);
     cb(err, results && results.rows ? results.rows[0].add_quiz : null);
   });
 };

@@ -5,8 +5,12 @@ h2 New Quiz
       .courseForm
         .row
           .large-12.columns
+            label(for='quizTitle') Title:
+            input#quizTitle(type='text', name='quizTitle', ng-model='quiz.quizTitle', autofocus)
+        .row
+          .large-12.columns
             label(for='quizQuestion') Question:
-            input#quizQuestion(type='text', name='quizQuestion', ng-model='quiz.quizQuestion', autofocus)
+            input#quizQuestion(type='text', name='quizQuestion', ng-model='quiz.quizQuestion')
         .row
           .small-12.columns
             label(for='lessonFiles') Upload image (optional < 4 MB):

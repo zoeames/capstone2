@@ -9,6 +9,7 @@ module.exports = {
   validate: {
     payload: {
       lessonId: Joi.string().required(),
+      quizTitle: Joi.string().required(),
       quizQuestion: Joi.string().required(),
       answerA: Joi.string().required(),
       answerB: Joi.string().required(),
@@ -21,6 +22,7 @@ module.exports = {
     }
   },
   handler: function(request, reply){
+    console.log('hit the controller with joi', request.payload);
     Quiz.create(request.payload, function(err, quizId){
       console.log('THIS IS THE quizid <<<<<<<<<< ', quizId);
       reply({quizId:quizId}).code(err ? 400 : 200);

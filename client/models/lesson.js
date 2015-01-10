@@ -8,12 +8,7 @@
         console.log('hit add factory', lesson);
         return $http.post('/newlesson', lesson);
       }
-/*
-      function add(courseId){
-        //console.log('hit add factory', courseId);
-        return $http.post('/addcourse', courseId);
-      }
-*/
+
       function query(courseId){
         console.log('hit add factory');
         return $http.get('/findlessons/' + courseId);

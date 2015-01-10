@@ -17,6 +17,15 @@ Quiz.create = function(obj, cb){
   });
 };
 
+Quiz.query = function(lessonid, cb){
+  console.log('lesson server model lessonID', lessonid);
+  pg.query('select * from find_quizzes($1)', [lessonid], function(err, results){
+    cb(err, results && results.rows ? results.rows : null);
+  });
+};
+
+
+
 Quiz.upload = function(user, file, name, quizId, cb){
   var s3   = new AWS.S3();
 

@@ -11,6 +11,11 @@
         return $http.post('/newquiz', quiz);
       }
 
+      function query(lessonId){
+        console.log('hit add factory');
+        return $http.get('/findquizzes/' + lessonId);
+      }
+
       function upload(quizId, files){
         var count = 0;
         for (var i = 0; i < files.length; i++){
@@ -28,6 +33,6 @@
         }
       }
 
-      return {create:create, upload:upload};
+      return {create:create, query:query, upload:upload};
     }]);
 })();

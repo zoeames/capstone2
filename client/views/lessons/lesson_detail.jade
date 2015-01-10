@@ -20,14 +20,14 @@ h2 Lesson: {{lesson.lessonTitle}}
         tr
           th Delete
           th Title
-          th Date
-          th Summary
+          th In Progress
+          th Completed
       tbody
-        tr(ng-repeat='l in lessons')
+        tr(ng-repeat='q in quizzes')
           td
             a(ng-click='nuke(lesson)')
               img(ng-src='/assets/delete.png')
-          td: a.button.button.success(ui-sref='newquiz({courseId:course.courseId, lessonId:l.lessonId})') {{l.lessonTitle}}
-          td {{l.lessonDate}}
-          td {{l.lessonSummary}}
+          td: a.button.button.success(ui-sref='quiz({courseId:courseId, lessonId:lessonId, quizId:q.quizId})') {{q.quizTitle}}
+          td {{q.isActive}}
+          td {{q.isCompleted}}
   #smallbreak

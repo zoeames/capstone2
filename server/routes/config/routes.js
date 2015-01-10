@@ -11,5 +11,6 @@ module.exports = [
   {method: 'get',    path: '/findcourses',                  config: require('../definitions/courses/query')},
   {method: 'get',    path: '/courses/{courseId}',           config: require('../definitions/courses/show')},
   {method: 'post',   path:'/newlesson',                     config: require('../definitions/lessons/create')},
-  {method: 'get',    path: '/findlessons/{courseId}',       config: require('../definitions/lessons/query')}
+  {method: 'get',    path: '/findlessons/{courseId}',       config: require('../definitions/lessons/query')},
+  {method: 'get',    path: '/lessons/{lessonId}',           config: require('../definitions/lessons/show')}
 ];

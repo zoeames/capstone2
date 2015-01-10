@@ -1,1 +1,33 @@
-h2 lesson detail
+h2 Lesson: {{lesson.lessonTitle}}
+
+#lessonInfo
+  .row
+    .small-4.columns
+      h4 Course: {{lesson.courseTitle}}
+    .small-4.columns
+      h4 Lesson Date: {{lesson.lessonDate}}
+    .small-4.columns
+      h4 Summary: {{lesson.lessonSummary}}
+
+#smallbreak
+#courseQuizzes
+  .row
+    h3 Quizzes:
+    button.button.success(ng-click='createQuiz()') Create a New Quiz
+  .row
+    table.lessonsTable
+      thead
+        tr
+          th Delete
+          th Title
+          th Date
+          th Summary
+      tbody
+        tr(ng-repeat='l in lessons')
+          td
+            a(ng-click='nuke(lesson)')
+              img(ng-src='/assets/delete.png')
+          td: a.button.button.success(ui-sref='lesson({courseId:course.courseId, lessonId:l.lessonId})') {{l.lessonTitle}}
+          td {{l.lessonDate}}
+          td {{l.lessonSummary}}
+  #smallbreak

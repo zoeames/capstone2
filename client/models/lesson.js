@@ -18,11 +18,11 @@
         console.log('hit add factory');
         return $http.get('/findlessons/' + courseId);
       }
-/*
-      function show(courseId){
-        return $http.get('/courses/' + courseId);
+
+      function show(lessonId){
+        return $http.get('/lessons/' + lessonId);
       }
-      */
-      return {create:create, query:query};
+
+      return {create:create, query:query, show:show};
     }]);
 })();

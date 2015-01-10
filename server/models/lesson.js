@@ -20,4 +20,13 @@ Lesson.query = function(courseid, cb){
   });
 };
 
+
+Lesson.show = function(lessonId, cb){
+  pg.query('select * from show_lesson($1)', [lessonId], function(err, results){
+    console.log('server side model lesson SHOW', results);
+    cb(err, results && results.rows ? results.rows[0] : null);
+  });
+};
+
+
 module.exports = Lesson;

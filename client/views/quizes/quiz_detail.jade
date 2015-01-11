@@ -3,8 +3,8 @@ h2 {{quiz.quizTitle}}
 #quizBody
   h3 Question: {{quiz.quizQuestion}}
   img.quizImg(ng-src='{{quiz.photoURL}}')
-  button.button.large.expand.success() Answer A: {{quiz.answerA}}
-  button.button.large.expand.success() Answer B: {{quiz.answerB}}
-  button.button.large.expand.success() Answer C: {{quiz.answerC}}
-  button.button.large.expand.success() Answer D: {{quiz.answerD}}
-  button.button.large.expand.success() Answer E: {{quiz.answerE}}
+  button.button.large.expand.success(ng-click='vote("A")') Answer A: {{quiz.answerA}}
+  button.button.large.expand.success(ng-click='vote("B")') Answer B: {{quiz.answerB}}
+  button.button.large.expand.success(ng-click='vote("C")') Answer C: {{quiz.answerC}}
+  button.button.large.expand.success(ng-click='vote("D")') Answer D: {{quiz.answerD}}
+  button.button.large.expand.success(ng-click='vote("E")') Answer E: {{quiz.answerE}}

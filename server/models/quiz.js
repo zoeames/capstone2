@@ -32,6 +32,13 @@ Quiz.show = function(quizId, cb){
   });
 };
 
+Quiz.vote = function(user, obj, cb){
+  console.log('hit the server model', obj);
+  pg.query('insert into quizanswers (userid, quizid, vote) values ($1, $2, $3)', [user.id, obj.quizId, obj.vote], function(err, results){
+    console.log(err);
+    cb(err, results);
+  });
+};
 
 Quiz.upload = function(user, file, name, quizId, cb){
   var s3   = new AWS.S3();

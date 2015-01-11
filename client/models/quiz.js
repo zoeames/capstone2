@@ -20,6 +20,11 @@
         return $http.get('/quizzes/' + quizId);
       }
 
+      function vote(myvote){
+        console.log('hit add factory', myvote);
+        return $http.post('/vote', myvote);
+      }
+
       function upload(quizId, files){
         var count = 0;
         for (var i = 0; i < files.length; i++){
@@ -37,6 +42,6 @@
         }
       }
 
-      return {create:create, query:query, show:show, upload:upload};
+      return {create:create, query:query, show:show, vote:vote, upload:upload};
     }]);
 })();

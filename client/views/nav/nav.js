@@ -7,7 +7,7 @@
         User.logout().then(function(){
           toastr.success('Successful logout.');
           $rootScope.rootuser = null;
-          $state.go('profile');
+          $state.go('home');
         });
       };
     }]);

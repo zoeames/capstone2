@@ -22,8 +22,9 @@ User.register = function(obj, cb){
   randomUrl(obj.avatar, function(file, avatar, token){
     user.avatar = avatar;
     user.token = token;
-    //console.log('SERVER SIDE USER>>>>>>', user);
+    console.log('SERVER SIDE USER>>>>>>', user);
     pg.query('insert into users (institutionid, password, avatar, token, firstname, lastname, email, isadmin) values ($1, $2, $3, $4, $5, $6, $7, $8) returning id', [user.institutionid, user.password, user.avatar, user.token, user.firstname, user.lastname, user.email, user.isadmin], function(err, results){
+      console.log('SERVER SIDE USER REGISTRAITON ERROR>>>>>>', err);
       if(err){return cb(true);}
       download(obj.avatar, file, cb);
     });

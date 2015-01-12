@@ -1,7 +1,7 @@
 'use strict';
 
 var Joi  = require('joi'),
-  Quiz = require('../../../models/Quiz');
+  Quiz = require('../../../models/quiz');
 
 module.exports = {
   description: 'Create a new quiz',

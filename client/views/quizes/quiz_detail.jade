@@ -1,6 +1,6 @@
 h2 {{quiz.quizTitle}}
 #instructorButtons(ng-show='rootuser.id === course.courseInstructorId')
-  button.button.large.alert(ng-click='startQuiz(quiz.quizId)') Start Quiz
+  button.button.large.alert(ng-click='startQuiz(quiz.quizId)', ng-show='quiz.isActive === true') Start Quiz
   button.button.large.alert(ng-click='closeQuiz(quiz.quizId)') Close Quiz
 #graph(ng-show='quiz.isCompleted=== true')
   h3 Student Results

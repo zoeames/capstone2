@@ -7,16 +7,17 @@
     .factory('Quiz', ['$rootScope', '$http', '$upload', function($rootScope, $http, $upload){
 
       function create(quiz){
-        console.log('hit add factory', quiz);
+        //console.log('hit add factory', quiz);
         return $http.post('/newquiz', quiz);
       }
 
       function query(lessonId){
-        console.log('hit add factory');
+        //console.log('hit add factory');
         return $http.get('/findquizzes/' + lessonId);
       }
 
       function show(quizId){
+        console.log('hit add factory - QUIZ  >>>>>', quizId);
         return $http.get('/quizzes/' + quizId);
       }
 

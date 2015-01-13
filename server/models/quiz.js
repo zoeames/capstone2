@@ -18,7 +18,7 @@ Quiz.create = function(obj, cb){
 };
 
 Quiz.query = function(lessonid, cb){
-  console.log('lesson server model lessonID', lessonid);
+  //console.log('lesson server model lessonID', lessonid);
   pg.query('select * from find_quizzes($1)', [lessonid], function(err, results){
     cb(err, results && results.rows ? results.rows : null);
   });
@@ -27,8 +27,9 @@ Quiz.query = function(lessonid, cb){
 
 
 Quiz.show = function(quizId, cb){
+  console.log('server side model quiz SHOW - input>>>>>', quizId);
   pg.query('select * from show_quiz($1)', [quizId], function(err, results){
-    console.log('server side model quiz SHOW', results);
+    console.log('server side model quiz SHOW - results >>>>', results.rows);
     cb(err, results && results.rows ? results.rows[0] : null);
   });
 };

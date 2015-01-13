@@ -57,6 +57,13 @@ Quiz.closeQuiz = function(quizId, cb){
   });
 };
 
+Quiz.quizcount = function(quizId, cb){
+  pg.query('select * from quiz_count($1)', [quizId], function(err, results){
+    console.log('server side model quizcount', results);
+    cb(err, results && results.rows ? results.rows : null);
+  });
+};
+
 
 Quiz.upload = function(user, file, name, quizId, cb){
   var s3   = new AWS.S3();

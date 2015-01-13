@@ -35,6 +35,11 @@
         return $http.post('/closequiz/' + quizId);
       }
 
+      function quizCount(quizId){
+        console.log('hit add factory');
+        return $http.get('/quizcount/' + quizId);
+      }
+
       function upload(quizId, files){
         var count = 0;
         for (var i = 0; i < files.length; i++){
@@ -52,6 +57,6 @@
         }
       }
 
-      return {create:create, query:query, show:show, vote:vote, upload:upload, start:start, closeQuiz:closeQuiz};
+      return {create:create, query:query, show:show, vote:vote, upload:upload, start:start, closeQuiz:closeQuiz, quizCount:quizCount};
     }]);
 })();

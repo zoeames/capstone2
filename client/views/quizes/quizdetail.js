@@ -12,7 +12,7 @@
       $scope.countE = 0;
 
       Quiz.show($state.params.quizId).then(function(response){
-        console.log(response.data);
+        console.log('THIS IS THE QUIZ', response.data);
         $scope.quiz = response.data;
       });
 
@@ -27,13 +27,15 @@
           console.log('error');
         });
       };
+
+
       Course.show($state.params.courseId).then(function(response){
-        console.log(response.data);
+        console.log('THIS is the course', response.data);
         $scope.course = response.data;
       });
 
       Quiz.quizCount($state.params.quizId).then(function(response){
-        console.log(response.data.quizcount);
+        //console.log(response.data.quizcount);
         for(var i= 0; i<response.data.quizcount.length; i++){
           console.log(response.data.quizcount[i]);
           if(response.data.quizcount[i].quizVote === 'A'){

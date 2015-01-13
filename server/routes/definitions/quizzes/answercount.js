@@ -15,8 +15,8 @@ module.exports = {
     console.log('hit add function from ROUTER');
     console.log('REQUEST', request.params);
     Quiz.quizcount (request.params.quizId, function(err, quizcount){
-      console.log('definition quizcount ERR>>>>', err);
-      console.log('definition quizcount >>>>', quizcount);
+      //console.log('definition quizcount ERR>>>>', err);
+      //console.log('definition quizcount >>>>', quizcount);
       reply({quizcount:quizcount}).code(err ? 400 : 200);
     });
   }

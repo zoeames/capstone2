@@ -13,6 +13,8 @@ module.exports = {
   },
   handler: function(request, reply){
     Quiz.show(request.params.quizId, function(err, quiz){
+      console.log('definition quiz ERR>>>>', err);
+      console.log('definition quiz >>>>', quiz);
       reply(quiz).code(err ? 400 : 200);
     });
   }

@@ -10,6 +10,7 @@
       $scope.countC = 0;
       $scope.countD = 0;
       $scope.countE = 0;
+      $scope.totalVoting = 0;
 
       Quiz.show($state.params.quizId).then(function(response){
         console.log('THIS IS THE QUIZ', response.data);
@@ -49,6 +50,7 @@
           }else{
             $scope.countE=response.data.quizcount[i].voteCount*1;
           }
+        $scope.totalVoting = $scope.countA+$scope.countB+$scope.countC+$scope.countD+$scope.countE;
         }
         $scope.plotMe();
       });

@@ -6,6 +6,8 @@ h2 {{quiz.quizTitle}}
   h3 Student Results
   .container
     #chartdiv
+    h4 Total number of students voting: {{totalVoting}}
+    h4 Correct Answer: {{quiz.correctAnswer}}
 #quizBody
   h3 Question: {{quiz.quizQuestion}}
   img.quizImg(ng-src='{{quiz.photoURL}}')

@@ -12,9 +12,11 @@
       $scope.countE = 0;
       $scope.totalVoting = 0;
 
+
       Quiz.show($state.params.quizId).then(function(response){
         console.log('THIS IS THE QUIZ', response.data);
         $scope.quiz = response.data;
+        $scope.finalAnswer = $scope.quiz.correctAnswer.replace('answer', '');
       });
 
       $scope.vote = function(vote){

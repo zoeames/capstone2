@@ -25,6 +25,7 @@ Quiz.query = function(lessonid, cb){
 };
 
 
+
 Quiz.show = function(quizId, cb){
   pg.query('select * from show_quiz($1)', [quizId], function(err, results){
     console.log('server side model quiz SHOW', results);

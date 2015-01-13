@@ -1,23 +1,23 @@
 'use strict';
 
 var Joi  = require('joi'),
-  Lesson = require('../../../models/lesson');
+  Quiz = require('../../../models/quiz');
 
 module.exports = {
-  description: 'Finds all lessons in a course',
+  description: 'Finds all quizzes in a lesson',
   tags:['lessons'],
   validate: {
     params: {
-      courseId: Joi.number().required()
+      lessonId: Joi.number().required()
     }
   },
   handler: function(request, reply){
     console.log('hit add function from ROUTER');
     console.log('REQUEST', request.params);
-    Lesson.query (request.params.courseId, function(err, lessons){
+    Quiz.query (request.params.lessonId, function(err, quizzes){
       //console.log('query ERR>>>>', err);
-      console.log('query >>>>', lessons);
-      reply({lessons:lessons}).code(err ? 400 : 200);
+      console.log('query >>>>', quizzes);
+      reply({quizzes:quizzes}).code(err ? 400 : 200);
     });
   }
 };

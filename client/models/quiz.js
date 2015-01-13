@@ -22,22 +22,22 @@
       }
 
       function vote(myvote){
-        console.log('hit add factory', myvote);
+        //console.log('hit add factory', myvote);
         return $http.post('/vote', myvote);
       }
 
       function start(quizId){
-        console.log('hit add factory', quizId);
+        //console.log('hit add factory', quizId);
         return $http.post('/startquiz/' + quizId);
       }
 
       function closeQuiz(quizId){
-        console.log('hit add factory', quizId);
+        //console.log('hit add factory', quizId);
         return $http.post('/closequiz/' + quizId);
       }
 
       function quizCount(quizId){
-        console.log('hit add factory');
+        //console.log('hit add factory');
         return $http.get('/quizcount/' + quizId);
       }
 

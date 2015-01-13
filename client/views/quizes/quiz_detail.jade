@@ -1,13 +1,15 @@
-h2 {{quiz.quizTitle}}
+h1 {{quiz.quizTitle}}
 #instructorButtons(ng-show='rootuser.id === course.courseInstructorId')
   button.button.large.alert(ng-click='startQuiz(quiz.quizId)', ng-show='quiz.isActive === false && quiz.isCompleted !== true') Start Quiz
   button.button.large.alert(ng-click='closeQuiz(quiz.quizId)') Close Quiz
+#smallbreak(ng-show='quiz.isCompleted=== true')
 #graph(ng-show='quiz.isCompleted=== true')
   h3 Student Results
   .container
     #chartdiv
     h4 Total number of students voting: {{totalVoting}}
     h4 Correct Answer: {{finalAnswer}}
+#smallbreak
 #quizBody
   h3 Question: {{quiz.quizQuestion}}
   img.quizImg(ng-src='{{quiz.photoURL}}')

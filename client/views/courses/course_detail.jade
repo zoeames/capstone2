@@ -1,4 +1,4 @@
-h2 Course: {{course.courseTitle}}
+h1 Course: {{course.courseTitle}}
 
 #courseInfo
   .row
@@ -7,27 +7,12 @@ h2 Course: {{course.courseTitle}}
       h4 Semester: {{course.semester}}
     .small-4.columns
       h4 Instructor: {{course.instructorFirstName}} {{course.instructorLastName}}
-      h4 Webpage: {{course.webpage}}
+      a.button.button.success(href='{{course.webpage}}') Course Webpage
     .small-4.columns
       .courseIdButton
         button.button.success.nav-toggle(href='#collapse1') Show Course ID
       #collapse1(style='display:none')
         h4 Course Id: {{course.courseId}}
-   .row
-     .small-12.columns
-       .weeklySchedule
-         .dayBox
-           h4 Monday
-         .dayBox
-           h4 Tuesday
-         .dayBox
-           h4 Wednesday
-         .dayBox
-           h4 Thursday
-         .dayBox
-           h4 Friday
-         .dayBox
-           h4 Saturday
 
 #smallbreak
 #mycourses

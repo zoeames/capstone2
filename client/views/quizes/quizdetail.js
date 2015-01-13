@@ -1,3 +1,5 @@
+/* jshint unused:false*/
+
 (function(){
   'use strict';
 
@@ -43,5 +45,61 @@
         $window.location.reload();
       };
 
+      var chart = AmCharts.makeChart('chartdiv', {
+        'type': 'serial',
+        'theme': 'none',
+        'dataProvider': [{
+          'Answer Choice': 'A',
+          'students': 2025
+        }, {
+          'Answer Choice': 'B',
+          'students': 1809
+        }, {
+          'Answer Choice': 'C',
+          'students': 1322
+        }, {
+          'Answer Choice': 'D',
+          'students': 1122
+        }, {
+          'Answer Choice': 'E',
+          'students': 395
+        }],
+        'valueAxes': [{
+          'gridColor':'#FFFFFF',
+          'gridAlpha': 0.2,
+          'dashLength': 0,
+          'labelsEnabled': true,
+          'title': 'Number of Students'
+        }],
+        'gridAboveGraphs': true,
+        'startDuration': 1,
+        'graphs': [{
+          'balloonText': '[[category]]: <b>[[value]]</b>',
+          'fillAlphas': 0.8,
+          'lineAlpha': 0.2,
+          'type': 'column',
+          'valueField': 'students'
+        }],
+        'chartCursor': {
+          'categoryBalloonEnabled': false,
+          'cursorAlpha': 0,
+          'zoomable': false
+        },
+        'categoryField': 'Answer Choice',
+        'categoryAxis': {
+          'gridPosition': 'start',
+          'gridAlpha': 0,
+          'tickPosition':'start',
+          'tickLength':20,
+          'title': 'Answer Choices'
+        },
+        'exportConfig':{
+          'menuTop': 0,
+          'menuItems': [{
+            'icon': '/lib/3/images/export.png',
+            'format': 'png'
+          }]
+        }
+      });
     }]);
 })();

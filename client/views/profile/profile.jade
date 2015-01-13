@@ -29,7 +29,7 @@ h1 My Profile
                               input#courseId(type='text', name='courseId', ng-model='addNewCourse.courseId', autofocus)
                           .large-6.columns
                               button.button.success(ng-click='addCourse(addNewCourse)') Add
-                              button.button.success(ng-click='addcourse=false') Done
+                              button.button.alert(ng-click='addcourse=false') Done
           .row
               table.coursesTable
                 thead

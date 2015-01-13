@@ -1,7 +1,11 @@
 @lightblue: #68B8DF;
+@darkblue: #2686B4;
 @lightpurple: #7582E4;
+@darkpurple: #3545BF;
 @lightgreen: #65E69D;
-@lightyellow: #FFF770;
+@darkgreen: #21C468;
+@lightyellow: #FFF998;
+@darkyellow: #FFF770;
 
 
 #avatarlink{
@@ -46,6 +50,10 @@ body {
   background-repeat: none;
   margin: 0;
   padding: 0;
+  color: #c2ccd1;
+}
+h1{
+  color: #c2ccd1;
 }
 
 
@@ -81,4 +89,17 @@ body {
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   line-height: 60px;
+}
+
+
+.button.success {
+  background-color: @lightgreen;
+  border-color: @darkgreen;
+  color: black;
+}
+
+.button.alert {
+  background-color: @lightyellow;
+  border-color: @darkyellow;
+  color: black;
 }

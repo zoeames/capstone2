@@ -48,6 +48,16 @@ Quiz.start = function(quizId, cb){
   });
 };
 
+
+Quiz.closeQuiz = function(quizId, cb){
+  console.log('hit the server model', quizId);
+  pg.query('UPDATE quizzes SET iscompleted = NOT iscompleted where id = $1;', [quizId], function(err){
+    //console.log(err);
+    cb(err);
+  });
+};
+
+
 Quiz.upload = function(user, file, name, quizId, cb){
   var s3   = new AWS.S3();
 

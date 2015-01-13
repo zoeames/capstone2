@@ -34,9 +34,13 @@
 
       $scope.closeQuiz = function(quizId){
         console.log(quizId);
+        Quiz.start(quizId).then(function(response){
+          console.log(response.data);
+        });
         Quiz.closeQuiz(quizId).then(function(response){
           console.log(response.data);
-          });
+        });
+        $window.location.reload();
       };
 
     }]);

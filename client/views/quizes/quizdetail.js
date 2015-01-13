@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('hapi-auth')
-    .controller('QuizDetailCtrl', ['$rootScope', '$scope', 'Course', '$state', 'Lesson', 'Quiz', function($rootScope, $scope, Course, $state, Lesson, Quiz){
+    .controller('QuizDetailCtrl', ['$rootScope', '$scope', 'Course', '$state', 'Lesson', 'Quiz', '$window', function($rootScope, $scope, Course, $state, Lesson, Quiz, $window){
       Quiz.show($state.params.quizId).then(function(response){
         console.log(response.data);
         $scope.quiz = response.data;
@@ -19,5 +19,25 @@
           console.log('error');
         });
       };
+      Course.show($state.params.courseId).then(function(response){
+        console.log(response.data);
+        $scope.course = response.data;
+      });
+
+      $scope.startQuiz = function(quizId){
+        console.log(quizId);
+        Quiz.start(quizId).then(function(response){
+          console.log(response.data);
+        });
+        $window.location.reload();
+      };
+
+      $scope.closeQuiz = function(quizId){
+        console.log(quizId);
+        Quiz.closeQuiz(quizId).then(function(response){
+          console.log(response.data);
+          });
+      };
+
     }]);
 })();

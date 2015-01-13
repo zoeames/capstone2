@@ -1,0 +1,20 @@
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('1', 'ASTR115.06: Introduction to Astronomy', '63670', 'Spring 2015', 'http://www.physics.sfsu.edu/~jfielder/11506S14.html', 'Astronomy');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('1', 'ASTR115.02: Introduction to Astronomy', '63666', 'Spring 2015', 'http://www.physics.sfsu.edu/~chris/astro115/index.html', 'Astronomy');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('1', 'PHYS111.01: General Physics I', '71239', 'Spring 2015', 'http://www.physics.sfsu.edu/~jfielder/Phys111F14.html', 'Physics');
+insert into courses (id, instructorid, coursetitle, institutionid, semester, webpage, topic) values ('4', '2', 'PHYS121.01: General Physics II', '71250', 'Spring 2015', 'http://www.physics.sfsu.edu/~chris/physics121/index.html', 'Physics');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('3', 'BIOL100.01: Human Biology', '63951', 'Spring 2015', 'http://biology.sfsu.edu/people/holly-harris', 'Biology');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('3', 'BIOL230.01: Introduction to Biology I', '74142', 'Spring 2015', 'http://biology.sfsu.edu/people/jonathan-knight', 'Biology');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('4', 'CHEM115.01: General Chemistry I', '65161', 'Spring 2015', 'http://www.chemistry.sfsu.edu', 'Chemistry');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('4', 'CHEM155.03: General Chemistry I', '65162', 'Spring 2015', 'http://www.chemistry.sfsu.edu', 'Chemistry');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('10', 'MATH226.01: Calculus I', '75872', 'Spring 2015', 'http://math.sfsu.edu/226.php', 'Math');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('10', 'MATH227.01: Calculus II', '69890', 'Spring 2015', 'http://math.sfsu.edu/227.php', 'Math');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('5', 'FR101.01: First Semester French', '67838', 'Spring 2015', 'http://french.sfsu.edu/courses', 'Foreign Language');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('5', 'FR102.01: Second Semester French', '67840', 'Spring 2015', 'http://french.sfsu.edu/courses', 'Foreign Language');
+
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('6', 'HIST110.01: History of Western Civilization I', '68520', 'Spring 2015', 'http://history.sfsu.edu/people/faculty/megan-williams', 'History');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('6', 'HIST111.01: History of Western Civilization II', '68522', 'Spring 2015', 'http://history.sfsu.edu/people/faculty/anthony-swanson', 'History');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('7', 'ENG114.01: First Year Composition', '66864', 'Spring 2015', 'http://english.sfsu.edu/people/faculty/andrew-levine', 'Humanities');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('7', 'ENG114.02: First Year Composition', '66865', 'Spring 2015', 'http://english.sfsu.edu/people/faculty/andrew-levine', 'Humanities');
+
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('1', 'PSY200.01: General Psychology', '71902', 'Spring 2015', 'http://online.sfsu.edu/mflynch/', 'Other');
+insert into courses (instructorid, coursetitle, institutionid, semester, webpage, topic) values ('1', 'ACCT100.01: Introduction to Financial Accounting', '63135', 'Spring 2015', 'http://cob6.sfsu.edu/accounting/courses', 'Other');

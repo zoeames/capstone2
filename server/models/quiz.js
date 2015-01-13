@@ -40,6 +40,14 @@ Quiz.vote = function(user, obj, cb){
   });
 };
 
+Quiz.start = function(quizId, cb){
+  console.log('hit the server model', quizId);
+  pg.query('UPDATE quizzes SET isactive = NOT isactive where id = $1;', [quizId], function(err){
+    //console.log(err);
+    cb(err);
+  });
+};
+
 Quiz.upload = function(user, file, name, quizId, cb){
   var s3   = new AWS.S3();
 

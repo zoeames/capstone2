@@ -17,5 +17,7 @@ module.exports = [
   {method: 'post',   path:'/quizzes/{quizId}/upload',       config: require('../definitions/quizzes/upload')},
   {method: 'get',    path: '/findquizzes/{lessonId}',       config: require('../definitions/quizzes/query')},
   {method: 'get',    path: '/quizzes/{quizId}',             config: require('../definitions/quizzes/show')},
-  {method: 'post',   path:'/vote',                          config: require('../definitions/quizzes/vote')}
+  {method: 'post',   path:'/vote',                          config: require('../definitions/quizzes/vote')},
+  {method: 'post',   path:'/startquiz/{quizId}',                     config: require('../definitions/quizzes/start')},
+  {method: 'post',   path:'/closequiz/{quizId}',                     config: require('../definitions/quizzes/close')}
 ];

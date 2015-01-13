@@ -1,5 +1,11 @@
+@lightblue: #68B8DF;
+@lightpurple: #7582E4;
+@lightgreen: #65E69D;
+@lightyellow: #FFF770;
+
+
 #avatarlink{
-  height: 45px;
+  height: 60px;
 }
 
 #avatarimg{
@@ -35,3 +41,44 @@ h1, h2, h3, h4, h5, h6{
   text-align: center;
 }
 
+body {
+  background-image: url('../assets/congruent_outline.png');
+  background-repeat: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+// NAV BAR
+.top-bar {
+  overflow: hidden;
+  height: 60px;
+  line-height: 45px;
+  background: @lightblue;
+  margin-bottom: 0;
+}
+
+.top-bar .name h1 {
+  line-height: 55px;
+  font-size: 50px;
+  margin: 0;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: @lightblue;
+}
+
+
+.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+  border-right: solid 1px #363636;
+  height: 60px;
+}
+
+.top-bar-section ul li > a {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  line-height: 60px;
+}

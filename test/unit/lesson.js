@@ -38,4 +38,22 @@ describe('User', function(){
       });
     });
   });
+  describe('.show', function(){
+    it('should show a lesson', function(done){
+      Lesson.show(1, function(err, results){
+        expect(err).to.be.null;
+        expect(results.lessonTitle).to.equal('Week 1');
+        done();
+      });
+    });
+  });
+  describe('.query', function(){
+    it('should query Lessons from a course', function(done){
+      Lesson.query(1, function(err, results){
+        expect(err).to.be.null;
+        expect(results).to.have.length(1);
+        done();
+      });
+    });
+  });
 });

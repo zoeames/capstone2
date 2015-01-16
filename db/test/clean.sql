@@ -1,7 +1,7 @@
-delete from courses;
-delete from mycourses;
-delete from lessons;
-delete from quizzes;
-delete from quizanswers;
 delete from photos;
+delete from quizanswers;
+delete from quizzes;
+delete from lessons;
+delete from mycourses;
+delete from courses;
 delete from users;

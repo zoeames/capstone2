@@ -52,12 +52,24 @@ describe('User', function(){
         done();
       });
     });
+    it('should NOT show a lesson - no lessonId', function(done){
+      Lesson.show('', function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
   });
   describe('.query', function(){
     it('should query Lessons from a course', function(done){
       Lesson.query(1, function(err, results){
         expect(err).to.be.null;
         expect(results).to.have.length(1);
+        done();
+      });
+    });
+    it('should NOT query Lessons from a course - no courseId', function(done){
+      Lesson.query('', function(err, results){
+        expect(err).to.be.ok;
         done();
       });
     });

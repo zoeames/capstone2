@@ -28,3 +28,6 @@ insert into quizzes (answerA, answerB, answerC, answerD, answerE, correctAnswer,
 delete from quizzes;
 
 insert into quizzes (id, answerA, answerB, answerC, answerD, answerE, correctAnswer, isActive, isCompleted, lessonId, question, quizTitle) values (1, 'asdfasd', '323', 'sdfs', 'sdfs', 'asdfd', 'answerD', 'false', 'false', '1', 'asdfe', 'quiz 1');
+
+
+insert into mycourses (userid, courseid) values (1, 1);

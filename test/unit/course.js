@@ -52,11 +52,26 @@ describe('User', function(){
         done();
       });
     });
+    it('should NOT show a course - no courseId', function(done){
+      Course.show('', function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
   });
   describe('.add', function(){
     it('should add a course', function(done){
       Course.add({id: 2}, 2, function(err, results){
         expect(err).to.be.null;
+        done();
+      });
+    });
+  });
+  describe('.query', function(){
+    it('should query all users courses', function(done){
+      Course.query({id:1}, function(err, results){
+        expect(err).to.be.null;
+        expect(results).to.have.length(1);
         done();
       });
     });

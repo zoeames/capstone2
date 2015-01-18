@@ -5,7 +5,7 @@
 var expect     = require('chai').expect,
     cp         = require('child_process'),
     h          = require('../helpers/helpers'),
-    Course       = require('../../server/models/course'),
+    Quiz       = require('../../server/models/quiz'),
     Lab        = require('lab'),
     lab        = exports.lab = Lab.script(),
     describe   = lab.describe,
@@ -21,17 +21,17 @@ describe('User', function(){
   });
 
   describe('constructor', function(){
-    it('should create a Course object', function(done){
-      var course = new Course({userId:'1'});
+    it('should create a Quiz object', function(done){
+      var quiz = new Quiz({userId:'1'});
 
-      expect(course).to.be.instanceof(Course);
+      expect(quiz).to.be.instanceof(Quiz);
       done();
     });
   });
 
   describe('.create', function(){
-    it('should create a course', function(done){
-      Course.create({id:1}, {InstructorId: '1', courseTitle: 'Phys102: intro to physics', institutionId:'234235', semester: 'Fall 2015', webpage:'www.google.com', topic:'Astronomy'}, function(err, results){
+    it('should create a quiz', function(done){
+      Quiz.create({answerA: 'asdfasd', answerB: '323', answerC: 'sdfs', answerD: 'sdfs', answerE: 'asdfd', correctAnswer: 'answerD', isActive: 'false', isCompleted: 'false', lessonId:'1', quizQuestion: 'asdfe', quizTitle: 'awerwer'}, function(err, results){
         expect(err).to.be.null;
         expect(results).to.be.above(0);
         done();
@@ -39,17 +39,8 @@ describe('User', function(){
     });
   });
   describe('.show', function(){
-    it('should show a course', function(done){
-      Course.show(1, function(err, results){
-        expect(err).to.be.null;
-        expect(results.courseTitle).to.equal('Phys101: intro to physics');
-        done();
-      });
-    });
-  });
-  describe('.add', function(){
-    it('should add a course', function(done){
-      Course.add({id: 2}, 2, function(err, results){
+    it('should show a quiz', function(done){
+      Quiz.show(1, function(err, results){
         expect(err).to.be.null;
         done();
       });

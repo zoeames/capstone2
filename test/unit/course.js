@@ -37,6 +37,12 @@ describe('User', function(){
         done();
       });
     });
+    it('should NOT create a course - no title', function(done){
+      Course.create({id:1}, {InstructorId: '1', institutionId:'234235', semester: 'Fall 2015', webpage:'www.google.com', topic:'Astronomy'}, function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
   });
   describe('.show', function(){
     it('should show a course', function(done){

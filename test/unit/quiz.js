@@ -37,6 +37,12 @@ describe('User', function(){
         done();
       });
     });
+    it('should NOT create a quiz - no title', function(done){
+      Quiz.create({answerA: 'asdfasd', answerB: '323', answerC: 'sdfs', answerD: 'sdfs', answerE: 'asdfd', correctAnswer: 'answerD', isActive: 'false', isCompleted: 'false', lessonId:'1', quizQuestion: 'asdfe'}, function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
   });
   describe('.show', function(){
     it('should show a quiz', function(done){

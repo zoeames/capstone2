@@ -37,6 +37,12 @@ describe('User', function(){
         done();
       });
     });
+    it('should NOT create a lesson - no title', function(done){
+      Lesson.create({courseId: '1', lessonDate: 'Fri Jan 16 2015 00:00:00', lessonSummary: 'How stars die'}, function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
   });
   describe('.show', function(){
     it('should show a lesson', function(done){

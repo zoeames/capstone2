@@ -38,7 +38,13 @@ describe('User', function(){
       });
     });
     it('should NOT register a new User - duplicate', function(done){
-      User.register({institutionId:'9999999999', password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'}, function(err){
+      User.register({institutionId:'9999999999', password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png', firstName:'bob', lastName:'smith', email:'bob@aol.com', isAdmin:'false'}, function(err){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
+    it('should NOT register a new User - no Id', function(done){
+      User.register({password:'123', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png', firstName:'bob', lastName:'smith', email:'bob@aol.com', isAdmin:'false'}, function(err){
         expect(err).to.be.ok;
         done();
       });
@@ -53,7 +59,7 @@ describe('User', function(){
       });
     });
     it('should NOT login a User - bad institutionid', function(done){
-      User.login({institutionId:'5555555555', password:'123'}, function(user){
+      User.login({institutionId:'wrong', password:'123'}, function(user){
         expect(user).to.be.undefined;
         done();
       });

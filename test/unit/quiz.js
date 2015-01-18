@@ -11,7 +11,8 @@ var expect     = require('chai').expect,
     describe   = lab.describe,
     it         = lab.it,
     beforeEach = lab.beforeEach,
-    db         = h.getdb();
+    db         = h.getdb(),
+    fs         = require('fs');
 
 describe('User', function(){
   beforeEach(function(done){
@@ -47,6 +48,53 @@ describe('User', function(){
   describe('.show', function(){
     it('should show a quiz', function(done){
       Quiz.show(1, function(err, results){
+        expect(err).to.be.null;
+        done();
+      });
+    });
+  });
+  describe('.vote', function(){
+    it('should create a vote', function(done){
+      Quiz.vote({id:'1'}, {quizId:'1', vote:'A'}, function(err, results){
+        expect(err).to.be.null;
+        done();
+      });
+    });
+    it('should NOT create a vote - no userId', function(done){
+      Quiz.vote({}, {quizId:'1', vote:'A'}, function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
+  });
+  describe('.start', function(){
+    it('should start a quiz', function(done){
+      Quiz.start(1, function(err, results){
+        expect(err).to.be.null;
+        done();
+      });
+    });
+  });
+  describe('.closeQuiz', function(){
+    it('should close a quiz', function(done){
+      Quiz.closeQuiz(1, function(err, results){
+        expect(err).to.be.null;
+        done();
+      });
+    });
+  });
+  describe('.quizcount', function(){
+    it('should show number of votes for a quiz', function(done){
+      Quiz.quizcount(1, function(err, results){
+        expect(err).to.be.null;
+        done();
+      });
+    });
+  });
+  describe('.upload', function(){
+    it('should upload an image', function(done){
+      var file = fs.createReadStream(__dirname + '/../fixtures/flag.png');
+      Quiz.upload({token:'tok'}, file, 'flag.png', 1, function(err, results){
         expect(err).to.be.null;
         done();
       });

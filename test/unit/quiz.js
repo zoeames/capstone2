@@ -90,12 +90,40 @@ describe('User', function(){
         done();
       });
     });
+    it('should NOT show number of votes for a quiz - no quizId', function(done){
+      Quiz.quizcount('', function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
   });
   describe('.upload', function(){
     it('should upload an image', function(done){
       var file = fs.createReadStream(__dirname + '/../fixtures/flag.png');
       Quiz.upload({token:'tok'}, file, 'flag.png', 1, function(err, results){
         expect(err).to.be.null;
+        done();
+      });
+    });
+    it('should NOT upload an image - no quizId', function(done){
+      var file = fs.createReadStream(__dirname + '/../fixtures/flag.png');
+      Quiz.upload({token:'tok'}, file, 'flag.png', '', function(err, results){
+        expect(err).to.be.ok;
+        done();
+      });
+    });
+  });
+  describe('.query', function(){
+    it('should query all quizzes from a lesson', function(done){
+      Quiz.query(1, function(err, results){
+        expect(err).to.be.null;
+        expect(results).to.have.length(1);
+        done();
+      });
+    });
+    it('should NOT query all quizzes from a lesson - no lessonId', function(done){
+      Quiz.query('', function(err, results){
+        expect(err).to.be.ok;
         done();
       });
     });

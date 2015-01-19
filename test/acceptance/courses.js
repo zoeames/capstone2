@@ -43,7 +43,7 @@ describe('Courses', function(){
           }
         };
         server.inject(options2, function(response){
-          courseId = response.result.courseId
+          courseId = response.result.courseId;
         done();
         });
       });

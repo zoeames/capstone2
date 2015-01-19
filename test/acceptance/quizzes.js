@@ -176,4 +176,75 @@ describe('Courses', function(){
       });
     });
   });
+  describe('post /startquiz/1', function(){
+    it('should start a quiz', function(done){
+      var options = {
+        method: 'post',
+        url: '/startquiz/'+quizId,
+        headers:{
+          cookie:cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+  });
+  describe('post /closequiz/1', function(){
+    it('should close a quiz', function(done){
+      var options = {
+        method: 'post',
+        url: '/closequiz/'+quizId,
+        headers:{
+          cookie:cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+  });
+  describe('get /quizcount/1', function(){
+    it('should count the number of responses to a quiz', function(done){
+      var options = {
+        method: 'get',
+        url: '/quizcount/1',
+        payload:{
+          quizId: '1'
+        },
+        headers:{
+          cookie:cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+  });
+  describe('post /vote', function(){
+    it('should submit a vote', function(done){
+      var options = {
+        method: 'post',
+        url: '/vote',
+        payload:{
+          quizId: '1',
+          vote: 'A'
+        },
+        headers:{
+          cookie:cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+  });
 });

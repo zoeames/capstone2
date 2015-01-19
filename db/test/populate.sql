@@ -13,6 +13,7 @@ insert into courses (instructorid, coursetitle, institutionid, semester, webpage
 delete from courses;
 
 insert into courses (id, instructorid, coursetitle, institutionid, semester, webpage, topic) values (1, '1', 'Phys101: intro to physics', '234235', 'Fall 2015', 'www.google.com', 'Astronomy');
+insert into courses (id, instructorid, coursetitle, institutionid, semester, webpage, topic) values (2, '2', 'Phys101: intro to physics', '234235', 'Fall 2015', 'www.google.com', 'Astronomy');
 
 
 insert into lessons (courseid, lessontitle, lessondate, lessonsummary) values ('1', 'Week 1', 'Fri Jan 16 2015 00:00:00', 'introduction');

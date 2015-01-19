@@ -72,6 +72,26 @@ describe('Courses', function(){
         done();
       });
     });
+    it('should NOT add a new course - no title', function(done){
+      var options = {
+        method: 'post',
+        url: '/newcourse',
+        payload:{
+          institutionId: '345345',
+          semester: 'Fall 2016',
+          topic: 'Other',
+          webpage: 'www.aol.com'
+        },
+        headers:{
+          cookie:cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(400);
+        done();
+      });
+    });
   });
   describe('post /addcourse', function(){
     it('should add a new course', function(done){
@@ -88,6 +108,23 @@ describe('Courses', function(){
 
       server.inject(options, function(response){
         expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+    it('should NOT add a new course - no id', function(done){
+      var options = {
+        method: 'post',
+        url: '/addcourse',
+        payload:{
+          courseId: ''
+        },
+        headers:{
+          cookie:cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(400);
         done();
       });
     });
@@ -122,6 +159,20 @@ describe('Courses', function(){
         expect(response.statusCode).to.equal(200);
         done();
       });
+    });
+  });
+  it('should NOT show a course - wrongid', function(done){
+    var options = {
+      method: 'get',
+      url: '/courses/6',
+      headers:{
+        cookie:cookie
+      }
+    };
+
+    server.inject(options, function(response){
+      expect(response.statusCode).to.equal(200);
+      done();
     });
   });
 });

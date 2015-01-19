@@ -54,6 +54,26 @@ describe('Users', function(){
         done();
       });
     });
+    it('should NOT register a new User - id already exists', function(done){
+      var options = {
+        method: 'post',
+        url: '/register',
+        payload:{
+          institutionId: '9999999999',
+          password: '123',
+          firstName:'Bob',
+          lastName:'Smith',
+          isAdmin:'false',
+          email:'bob@aol.com',
+          avatar: 'http://carleton.ca/law/wp-content/uploads/default-profile2-160x160.jpg'
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(400);
+        done();
+      });
+    });
   });
 
   describe('post /login', function(){
@@ -70,6 +90,21 @@ describe('Users', function(){
       server.inject(options, function(response){
         expect(response.result.institutionid).to.equal('9999999999');
         expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+    it('should NOT login a User - id does not exist', function(done){
+      var options = {
+        method: 'post',
+        url: '/login',
+        payload:{
+          institutionId: 'wrong',
+          password: '123'
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(401);
         done();
       });
     });

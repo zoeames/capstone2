@@ -15,9 +15,9 @@ module.exports = {
     }
   },
   handler: function(request, reply){
-    Lesson.create(request.payload, function(err, courseId){
-      console.log('THIS IS THE courseid <<<<<<<<<< ', courseId);
-      reply({courseId:courseId}).code(err ? 400 : 200);
+    Lesson.create(request.payload, function(err, lessonId){
+      console.log('THIS IS THE courseid <<<<<<<<<< ', lessonId);
+      reply({lessonId:lessonId}).code(err ? 400 : 200);
     });
   }
 };

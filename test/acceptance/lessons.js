@@ -14,7 +14,7 @@ var expect     = require('chai').expect,
     db         = h.getdb();
 
 describe('Courses', function(){
-  var cookie, courseId;
+  var cookie, courseId, lessonId;
   beforeEach(function(done){
     cp.execFile(__dirname + '/../scripts/clean-db.sh', [db], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr){
       var options1 = {
@@ -44,23 +44,38 @@ describe('Courses', function(){
         };
         server.inject(options2, function(response){
           courseId = response.result.courseId;
-        done();
+          var options3 = {
+            method: 'post',
+            url: '/newlesson',
+            payload:{
+              courseId: '1',
+              lessonDate: '2015-01-21T06:00:00.000Z',
+              lessonSummary: 'this is a great lesson',
+              lessonTitle: 'first lesson'
+            },
+            headers:{
+              cookie:cookie
+            }
+          };
+          server.inject(options3, function(response){
+            lessonId = response.result.lessonId;
+            done();
+          });
         });
       });
     });
   });
 
-  describe('post /newcourse', function(){
-    it('should add a new course', function(done){
+  describe('post /newlesson', function(){
+    it('should add a new lesson', function(done){
       var options = {
         method: 'post',
-        url: '/newcourse',
+        url: '/newlesson',
         payload:{
-          courseTitle: 'intro to stuff',
-          institutionId: '345345',
-          semester: 'Fall 2016',
-          topic: 'Other',
-          webpage: 'www.aol.com'
+          courseId: '2',
+          lessonDate: '2015-01-21T06:00:00.000Z',
+          lessonSummary: 'this is a great lesson',
+          lessonTitle: 'first lesson'
         },
         headers:{
           cookie:cookie
@@ -72,15 +87,14 @@ describe('Courses', function(){
         done();
       });
     });
-    it('should NOT add a new course - no title', function(done){
+    it('should NOT add a new lesson - no title', function(done){
       var options = {
         method: 'post',
-        url: '/newcourse',
+        url: '/newlesson',
         payload:{
-          institutionId: '345345',
-          semester: 'Fall 2016',
-          topic: 'Other',
-          webpage: 'www.aol.com'
+          courseId: '2',
+          lessonDate: '2015-01-21T06:00:00.000Z',
+          lessonSummary: 'this is a great lesson'
         },
         headers:{
           cookie:cookie
@@ -93,47 +107,12 @@ describe('Courses', function(){
       });
     });
   });
-  describe('post /addcourse', function(){
-    it('should add a new course', function(done){
-      var options = {
-        method: 'post',
-        url: '/addcourse',
-        payload:{
-          courseId: '2'
-        },
-        headers:{
-          cookie:cookie
-        }
-      };
 
-      server.inject(options, function(response){
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
-    it('should NOT add a new course - no id', function(done){
-      var options = {
-        method: 'post',
-        url: '/addcourse',
-        payload:{
-          courseId: ''
-        },
-        headers:{
-          cookie:cookie
-        }
-      };
-
-      server.inject(options, function(response){
-        expect(response.statusCode).to.equal(400);
-        done();
-      });
-    });
-  });
-  describe('get /findcourses', function(){
-    it('should add a new course', function(done){
+  describe('get /findlessons/1', function(){
+    it('should find all lessons in a course', function(done){
       var options = {
         method: 'get',
-        url: '/findcourses',
+        url: '/findlessons/'+courseId,
         headers:{
           cookie:cookie
         }
@@ -145,11 +124,11 @@ describe('Courses', function(){
       });
     });
   });
-  describe('get /courses/1', function(){
-    it('should show a course', function(done){
+  describe('get /lessons/1', function(){
+    it('should show a lesson', function(done){
       var options = {
         method: 'get',
-        url: '/courses/'+ courseId,
+        url: '/lessons/'+ lessonId,
         headers:{
           cookie:cookie
         }

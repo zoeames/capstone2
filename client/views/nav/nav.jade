@@ -12,6 +12,6 @@ nav.top-bar(data-topbar, role="navigation", ng-controller='NavCtrl', full-width)
       li: a(ui-sref='login') Login
     ul.right(ng-show='rootuser.institutionid')
       li: a(ui-sref='profile') Profile
-      li: a(ui-sref='newcourse') New Course
+      li: a(ui-sref='newcourse', ng-show='rootuser.isadmin === "true"') New Course
       li.divider
       li: a#avatarlink(ng-click='logout()'): img#avatarimg(ng-src='{{rootuser.avatar}}')

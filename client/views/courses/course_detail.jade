@@ -33,6 +33,6 @@ h1 Course: {{course.courseTitle}}
             a(ng-click='nuke(lesson)')
               img(ng-src='/assets/delete.png')
           td: a.button.button.success(ui-sref='lesson({courseId:course.courseId, lessonId:l.lessonId})') {{l.lessonTitle}}
-          td {{l.lessonDate}}
+          td {{moment(l.lessonDate).format('MMMM D YYYY')}}
           td {{l.lessonSummary}}
   #smallbreak

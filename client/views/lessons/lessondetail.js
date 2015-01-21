@@ -5,6 +5,7 @@
     .controller('LessonDetailCtrl', ['$rootScope', '$scope', 'Course', '$state', 'Lesson', 'Quiz', function($rootScope, $scope, Course, $state, Lesson, Quiz){
       $scope.courseId = $state.params.courseId;
       $scope.lessonId = $state.params.lessonId;
+      $scope.moment = moment;
 
       Lesson.show($state.params.lessonId).then(function(response){
         console.log(response.data);

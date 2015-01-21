@@ -4,6 +4,7 @@
   angular.module('hapi-auth')
     .controller('CourseDetailCtrl', ['$rootScope', '$scope', 'Course', '$state', 'Lesson', function($rootScope, $scope, Course, $state, Lesson){
       $scope.course = {};
+      $scope.moment = moment;
 
       $('.nav-toggle').click(function(){
         var collapse_content_selector = $(this).attr('href'),

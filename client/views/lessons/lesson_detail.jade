@@ -5,7 +5,7 @@ h1 Lesson: {{lesson.lessonTitle}}
     .small-4.columns
       h4 Course: {{lesson.courseTitle}}
     .small-4.columns
-      h4 Lesson Date: {{lesson.lessonDate}}
+      h4 Lesson Date:  {{moment(lesson.lessonDate).format('MMMM D YYYY')}}
     .small-4.columns
       h4 Summary: {{lesson.lessonSummary}}
 

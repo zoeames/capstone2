@@ -13,6 +13,7 @@ h1 Course: {{course.courseTitle}}
         button.button.success.nav-toggle(href='#collapse1') Show Course ID
       #collapse1(style='display:none')
         h4 Course Id: {{course.courseId}}
+      button.button.alert(ui-sref='gradebook({courseId:course.courseId})') Gradebook
 
 #smallbreak
 #mycourses

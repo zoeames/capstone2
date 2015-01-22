@@ -1,0 +1,29 @@
+h1 Gradebook
+#courseGradeInfo
+  .row
+    .small-12.columns
+      h4 Course: {{course.courseTitle}}
+  .row
+    .small-6.columns
+      h4 Institution ID: {{course.institutionId}}
+    .small-6.columns
+      h4 Semester: {{course.semester}}
+
+#smallbreak
+
+#gradebook
+  h3 Gradebook:
+  .row
+    table.gradebookTable
+      thead
+        tr
+          th Delete
+          th Student ID
+          th Student Name
+      tbody
+        tr(ng-repeat='s in students')
+          td
+            a(ng-click='nuke(student)')
+              img(ng-src='/assets/delete.png')
+          td {{s.institutionId}}
+          td {{s.firstName}} {{s.lastName}}

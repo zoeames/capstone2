@@ -2,7 +2,9 @@
   'use strict';
 
   angular.module('hapi-auth')
-    .controller('GradebookDetailCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
-      $scope.student={};
+    .controller('GradebookDetailCtrl', ['$rootScope', '$scope', 'Gradebook', '$state', function($rootScope, $scope, Gradebook, $state){
+      $scope.students={};
+
+
     }]);
 })();

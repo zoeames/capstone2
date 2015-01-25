@@ -18,12 +18,12 @@ h1 Gradebook
       thead
         tr
           th Delete
-          th Student ID
           th Student Name
+          th Student ID
       tbody
         tr(ng-repeat='s in students')
           td
             a(ng-click='nuke(student)')
               img(ng-src='/assets/delete.png')
+          td: a.button.button.success(ui-sref='gradebookdetail({courseId:courseId, studentId:s.userId})') {{s.firstName}} {{s.lastName}}
           td {{s.institutionId}}
-          td {{s.firstName}} {{s.lastName}}

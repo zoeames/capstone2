@@ -20,5 +20,6 @@ module.exports = [
   {method: 'post',   path:'/vote',                          config: require('../definitions/quizzes/vote')},
   {method: 'post',   path:'/startquiz/{quizId}',            config: require('../definitions/quizzes/start')},
   {method: 'post',   path:'/closequiz/{quizId}',            config: require('../definitions/quizzes/close')},
-  {method: 'get',    path: '/quizcount/{quizId}',           config: require('../definitions/quizzes/answercount')}
+  {method: 'get',    path: '/quizcount/{quizId}',           config: require('../definitions/quizzes/answercount')},
+  {method: 'get',    path: '/findgradebook/{courseId}',     config: require('../definitions/gradebook/query')}
 ];
